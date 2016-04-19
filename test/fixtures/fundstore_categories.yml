@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_heading: MyText
+  category_subheading: MyText
+  fund_store_id: 
+  fund_id: 
+
+two:
+  category_heading: MyText
+  category_subheading: MyText
+  fund_store_id: 
+  fund_id: 
