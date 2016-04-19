@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  relationship_type: MyString
+  fund_manager_id: 
+  fund_id: 
+
+two:
+  relationship_type: MyString
+  fund_manager_id: 
+  fund_id: 
