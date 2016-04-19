@@ -1,0 +1,33 @@
+<%= form_for(@fundstore_category) do |f| %>
+  <% if @fundstore_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundstore_category.errors.count, "error") %> prohibited this fundstore_category from being saved:</h2>
+
+      <ul>
+      <% @fundstore_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category_heading %><br>
+    <%= f.text_area :category_heading %>
+  </div>
+  <div class="field">
+    <%= f.label :category_subheading %><br>
+    <%= f.text_area :category_subheading %>
+  </div>
+  <div class="field">
+    <%= f.label :fund_store_id %><br>
+    <%= f.text_field :fund_store_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fund_id %><br>
+    <%= f.text_field :fund_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

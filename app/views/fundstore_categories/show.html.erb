@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category heading:</strong>
+  <%= @fundstore_category.category_heading %>
+</p>
+
+<p>
+  <strong>Category subheading:</strong>
+  <%= @fundstore_category.category_subheading %>
+</p>
+
+<p>
+  <strong>Fund store:</strong>
+  <%= @fundstore_category.fund_store %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @fundstore_category.fund %>
+</p>
+
+<%= link_to 'Edit', edit_fundstore_category_path(@fundstore_category) %> |
+<%= link_to 'Back', fundstore_categories_path %>

@@ -1,0 +1,31 @@
+<h1>Listing fundstore_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category heading</th>
+      <th>Category subheading</th>
+      <th>Fund store</th>
+      <th>Fund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fundstore_categories.each do |fundstore_category| %>
+      <tr>
+        <td><%= fundstore_category.category_heading %></td>
+        <td><%= fundstore_category.category_subheading %></td>
+        <td><%= fundstore_category.fund_store %></td>
+        <td><%= fundstore_category.fund %></td>
+        <td><%= link_to 'Show', fundstore_category %></td>
+        <td><%= link_to 'Edit', edit_fundstore_category_path(fundstore_category) %></td>
+        <td><%= link_to 'Destroy', fundstore_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fundstore category', new_fundstore_category_path %>
