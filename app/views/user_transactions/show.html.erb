@@ -1,29 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = UserTransaction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => UserTransaction %></h1>
+</div>
 
-<p>
-  <strong>Transaction dollar amount:</strong>
-  <%= @user_transaction.transaction_dollar_amount %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:transaction_dollar_amount) %></dt>
+      <dd><pre class="prettyprint"><%= @user_transaction.transaction_dollar_amount %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:issued_nav_shares) %></dt>
+      <dd><pre class="prettyprint"><%= @user_transaction.issued_nav_shares %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:user_action) %></dt>
+      <dd><pre class="prettyprint"><%= @user_transaction.user_action %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Issued nav shares:</strong>
-  <%= @user_transaction.issued_nav_shares %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              user_transactions_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_user_transaction_path(@user_transaction), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              user_transaction_path(@user_transaction),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User action:</strong>
-  <%= @user_transaction.user_action %>
-</p>
-
-<p>
-  <strong>User account:</strong>
-  <%= @user_transaction.user_account %>
-</p>
-
-<p>
-  <strong>Fund:</strong>
-  <%= @user_transaction.fund %>
-</p>
-
-<%= link_to 'Edit', edit_user_transaction_path(@user_transaction) %> |
-<%= link_to 'Back', user_transactions_path %>

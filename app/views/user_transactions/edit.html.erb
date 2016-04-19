@@ -1,6 +1,5 @@
-<h1>Editing user_transaction</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user_transaction %> |
-<%= link_to 'Back', user_transactions_path %>
+<%- model_class = UserTransaction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => UserTransaction %></h1>
+</div>
+<%= render :partial => 'form' %>
