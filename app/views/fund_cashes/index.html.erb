@@ -1,0 +1,27 @@
+<h1>Listing fund_cashes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Fund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fund_cashes.each do |fund_cash| %>
+      <tr>
+        <td><%= fund_cash.amount %></td>
+        <td><%= fund_cash.fund %></td>
+        <td><%= link_to 'Show', fund_cash %></td>
+        <td><%= link_to 'Edit', edit_fund_cash_path(fund_cash) %></td>
+        <td><%= link_to 'Destroy', fund_cash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fund cash', new_fund_cash_path %>

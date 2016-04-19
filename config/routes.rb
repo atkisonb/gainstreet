@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :fund_cashes
+
   resources :fund_categorizations
 
   resources :fund_managements
