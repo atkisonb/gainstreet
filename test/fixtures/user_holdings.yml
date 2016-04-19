@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nav_shares_owned: 9.99
+  amount_invested: 9.99
+  user_account_id: 
+  fund_id: 
+
+two:
+  nav_shares_owned: 9.99
+  amount_invested: 9.99
+  user_account_id: 
+  fund_id: 
