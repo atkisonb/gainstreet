@@ -3,4 +3,5 @@ class Fund < ActiveRecord::Base
   belongs_to :fund_manager
   has_many :stocks
   has_many :fundstore_categories
+  has_many :fund_managers
 end
