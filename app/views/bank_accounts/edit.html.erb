@@ -1,6 +1,5 @@
-<h1>Editing bank_account</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @bank_account %> |
-<%= link_to 'Back', bank_accounts_path %>
+<%- model_class = BankAccount -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => BankAccount %></h1>
+</div>
+<%= render :partial => 'form' %>
