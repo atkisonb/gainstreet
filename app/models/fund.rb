@@ -10,4 +10,5 @@ class Fund < ActiveRecord::Base
   has_many :fund_transactions
   has_many :holdings
   has_many :user_holdings
+  has_one :fund_cash
 end
