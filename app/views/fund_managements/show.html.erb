@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Relationship type:</strong>
+  <%= @fund_management.relationship_type %>
+</p>
+
+<p>
+  <strong>Fund manager:</strong>
+  <%= @fund_management.fund_manager %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @fund_management.fund %>
+</p>
+
+<%= link_to 'Edit', edit_fund_management_path(@fund_management) %> |
+<%= link_to 'Back', fund_managements_path %>
