@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fund_name: MyString
+  fund_description: MyText
+  fund_strategy: MyText
+  strategy_why_i_buy: MyText
+  strategy_why_i_sell: MyText
+  strategy_allocation_discipline: MyText
+  strategy_other_notes: MyText
+  nav_shares: 9.99
+  user_account_id: 
+  fund_manager_id: 
+
+two:
+  fund_name: MyString
+  fund_description: MyText
+  fund_strategy: MyText
+  strategy_why_i_buy: MyText
+  strategy_why_i_sell: MyText
+  strategy_allocation_discipline: MyText
+  strategy_other_notes: MyText
+  nav_shares: 9.99
+  user_account_id: 
+  fund_manager_id: 
