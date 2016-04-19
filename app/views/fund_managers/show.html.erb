@@ -1,54 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = FundManager -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FundManager %></h1>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @fund_manager.first_name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_name) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.first_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:last_name) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.last_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:manager_email) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.manager_email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:about) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.about %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:manager_facebook) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.manager_facebook %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:manager_instagram) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.manager_instagram %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:manager_location) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.manager_location %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:manager_school) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.manager_school %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:manager_twitter) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.manager_twitter %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:manager_years_experience) %></dt>
+      <dd><pre class="prettyprint"><%= @fund_manager.manager_years_experience %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @fund_manager.last_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              fund_managers_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_fund_manager_path(@fund_manager), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              fund_manager_path(@fund_manager),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Manager email:</strong>
-  <%= @fund_manager.manager_email %>
-</p>
-
-<p>
-  <strong>About:</strong>
-  <%= @fund_manager.about %>
-</p>
-
-<p>
-  <strong>Manager facebook:</strong>
-  <%= @fund_manager.manager_facebook %>
-</p>
-
-<p>
-  <strong>Manager instagram:</strong>
-  <%= @fund_manager.manager_instagram %>
-</p>
-
-<p>
-  <strong>Manager location:</strong>
-  <%= @fund_manager.manager_location %>
-</p>
-
-<p>
-  <strong>Manager school:</strong>
-  <%= @fund_manager.manager_school %>
-</p>
-
-<p>
-  <strong>Manager twitter:</strong>
-  <%= @fund_manager.manager_twitter %>
-</p>
-
-<p>
-  <strong>Manager years experience:</strong>
-  <%= @fund_manager.manager_years_experience %>
-</p>
-
-<%= link_to 'Edit', edit_fund_manager_path(@fund_manager) %> |
-<%= link_to 'Back', fund_managers_path %>

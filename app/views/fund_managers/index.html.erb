@@ -1,25 +1,29 @@
-<h1>Listing fund_managers</h1>
-
-<table>
+<%- model_class = FundManager -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FundManager %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Manager email</th>
-      <th>About</th>
-      <th>Manager facebook</th>
-      <th>Manager instagram</th>
-      <th>Manager location</th>
-      <th>Manager school</th>
-      <th>Manager twitter</th>
-      <th>Manager years experience</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+      <th><%= model_class.human_attribute_name(:manager_email) %></th>
+      <th><%= model_class.human_attribute_name(:about) %></th>
+      <th><%= model_class.human_attribute_name(:manager_facebook) %></th>
+      <th><%= model_class.human_attribute_name(:manager_instagram) %></th>
+      <th><%= model_class.human_attribute_name(:manager_location) %></th>
+      <th><%= model_class.human_attribute_name(:manager_school) %></th>
+      <th><%= model_class.human_attribute_name(:manager_twitter) %></th>
+      <th><%= model_class.human_attribute_name(:manager_years_experience) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @fund_managers.each do |fund_manager| %>
       <tr>
+        <td><%= fund_manager.id %></td>
         <td><%= fund_manager.first_name %></td>
         <td><%= fund_manager.last_name %></td>
         <td><%= fund_manager.manager_email %></td>
@@ -30,14 +34,21 @@
         <td><%= fund_manager.manager_school %></td>
         <td><%= fund_manager.manager_twitter %></td>
         <td><%= fund_manager.manager_years_experience %></td>
-        <td><%= link_to 'Show', fund_manager %></td>
-        <td><%= link_to 'Edit', edit_fund_manager_path(fund_manager) %></td>
-        <td><%= link_to 'Destroy', fund_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l fund_manager.created_at, format: :long %></td>
+        <td>
+          <%= link_to fund_manager_path(fund_manager), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to fund_manager_path(fund_manager), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Fund manager', new_fund_manager_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_fund_manager_path,
+            :class => 'btn btn-primary' %>
