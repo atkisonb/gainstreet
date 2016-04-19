@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transaction dollar amount:</strong>
+  <%= @user_transaction.transaction_dollar_amount %>
+</p>
+
+<p>
+  <strong>Issued nav shares:</strong>
+  <%= @user_transaction.issued_nav_shares %>
+</p>
+
+<p>
+  <strong>User action:</strong>
+  <%= @user_transaction.user_action %>
+</p>
+
+<p>
+  <strong>User account:</strong>
+  <%= @user_transaction.user_account %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @user_transaction.fund %>
+</p>
+
+<%= link_to 'Edit', edit_user_transaction_path(@user_transaction) %> |
+<%= link_to 'Back', user_transactions_path %>

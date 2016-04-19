@@ -1,0 +1,33 @@
+<h1>Listing user_transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Transaction dollar amount</th>
+      <th>Issued nav shares</th>
+      <th>User action</th>
+      <th>User account</th>
+      <th>Fund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_transactions.each do |user_transaction| %>
+      <tr>
+        <td><%= user_transaction.transaction_dollar_amount %></td>
+        <td><%= user_transaction.issued_nav_shares %></td>
+        <td><%= user_transaction.user_action %></td>
+        <td><%= user_transaction.user_account %></td>
+        <td><%= user_transaction.fund %></td>
+        <td><%= link_to 'Show', user_transaction %></td>
+        <td><%= link_to 'Edit', edit_user_transaction_path(user_transaction) %></td>
+        <td><%= link_to 'Destroy', user_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User transaction', new_user_transaction_path %>
