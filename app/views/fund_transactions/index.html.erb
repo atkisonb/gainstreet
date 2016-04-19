@@ -1,33 +1,40 @@
-<h1>Listing fund_transactions</h1>
-
-<table>
+<%- model_class = FundTransaction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FundTransaction %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Market shares</th>
-      <th>Amount</th>
-      <th>Market action</th>
-      <th>Stock</th>
-      <th>Fund</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:market_shares) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:market_action) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @fund_transactions.each do |fund_transaction| %>
       <tr>
+        <td><%= fund_transaction.id %></td>
         <td><%= fund_transaction.market_shares %></td>
         <td><%= fund_transaction.amount %></td>
         <td><%= fund_transaction.market_action %></td>
-        <td><%= fund_transaction.stock %></td>
-        <td><%= fund_transaction.fund %></td>
-        <td><%= link_to 'Show', fund_transaction %></td>
-        <td><%= link_to 'Edit', edit_fund_transaction_path(fund_transaction) %></td>
-        <td><%= link_to 'Destroy', fund_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l fund_transaction.created_at, format: :long %></td>
+        <td>
+          <%= link_to fund_transaction_path(fund_transaction), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to fund_transaction_path(fund_transaction), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Fund transaction', new_fund_transaction_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_fund_transaction_path,
+            :class => 'btn btn-primary' %>
