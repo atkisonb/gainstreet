@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_holdings
+
   resources :user_transactions
 
   # The priority is based upon order of creation: first created -> highest priority.

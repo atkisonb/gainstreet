@@ -1,0 +1,31 @@
+<h1>Listing user_holdings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nav shares owned</th>
+      <th>Amount invested</th>
+      <th>User account</th>
+      <th>Fund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_holdings.each do |user_holding| %>
+      <tr>
+        <td><%= user_holding.nav_shares_owned %></td>
+        <td><%= user_holding.amount_invested %></td>
+        <td><%= user_holding.user_account %></td>
+        <td><%= user_holding.fund %></td>
+        <td><%= link_to 'Show', user_holding %></td>
+        <td><%= link_to 'Edit', edit_user_holding_path(user_holding) %></td>
+        <td><%= link_to 'Destroy', user_holding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User holding', new_user_holding_path %>

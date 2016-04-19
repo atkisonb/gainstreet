@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nav shares owned:</strong>
+  <%= @user_holding.nav_shares_owned %>
+</p>
+
+<p>
+  <strong>Amount invested:</strong>
+  <%= @user_holding.amount_invested %>
+</p>
+
+<p>
+  <strong>User account:</strong>
+  <%= @user_holding.user_account %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @user_holding.fund %>
+</p>
+
+<%= link_to 'Edit', edit_user_holding_path(@user_holding) %> |
+<%= link_to 'Back', user_holdings_path %>
