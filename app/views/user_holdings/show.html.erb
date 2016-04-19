@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = UserHolding -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => UserHolding %></h1>
+</div>
 
-<p>
-  <strong>Nav shares owned:</strong>
-  <%= @user_holding.nav_shares_owned %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:nav_shares_owned) %></dt>
+      <dd><pre class="prettyprint"><%= @user_holding.nav_shares_owned %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:amount_invested) %></dt>
+      <dd><pre class="prettyprint"><%= @user_holding.amount_invested %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Amount invested:</strong>
-  <%= @user_holding.amount_invested %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              user_holdings_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_user_holding_path(@user_holding), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              user_holding_path(@user_holding),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User account:</strong>
-  <%= @user_holding.user_account %>
-</p>
-
-<p>
-  <strong>Fund:</strong>
-  <%= @user_holding.fund %>
-</p>
-
-<%= link_to 'Edit', edit_user_holding_path(@user_holding) %> |
-<%= link_to 'Back', user_holdings_path %>

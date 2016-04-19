@@ -1,31 +1,38 @@
-<h1>Listing user_holdings</h1>
-
-<table>
+<%- model_class = UserHolding -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => UserHolding %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Nav shares owned</th>
-      <th>Amount invested</th>
-      <th>User account</th>
-      <th>Fund</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:nav_shares_owned) %></th>
+      <th><%= model_class.human_attribute_name(:amount_invested) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @user_holdings.each do |user_holding| %>
       <tr>
+        <td><%= user_holding.id %></td>
         <td><%= user_holding.nav_shares_owned %></td>
         <td><%= user_holding.amount_invested %></td>
-        <td><%= user_holding.user_account %></td>
-        <td><%= user_holding.fund %></td>
-        <td><%= link_to 'Show', user_holding %></td>
-        <td><%= link_to 'Edit', edit_user_holding_path(user_holding) %></td>
-        <td><%= link_to 'Destroy', user_holding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l user_holding.created_at, format: :long %></td>
+        <td>
+          <%= link_to user_holding_path(user_holding), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to user_holding_path(user_holding), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User holding', new_user_holding_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_user_holding_path,
+            :class => 'btn btn-primary' %>

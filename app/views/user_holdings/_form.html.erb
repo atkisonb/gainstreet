@@ -1,33 +1,22 @@
-<%= form_for(@user_holding) do |f| %>
-  <% if @user_holding.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_holding.errors.count, "error") %> prohibited this user_holding from being saved:</h2>
-
-      <ul>
-      <% @user_holding.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @user_holding, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :nav_shares_owned, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :nav_shares_owned, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :amount_invested, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :amount_invested, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :nav_shares_owned %><br>
-    <%= f.text_field :nav_shares_owned %>
-  </div>
-  <div class="field">
-    <%= f.label :amount_invested %><br>
-    <%= f.text_field :amount_invested %>
-  </div>
-  <div class="field">
-    <%= f.label :user_account_id %><br>
-    <%= f.text_field :user_account_id %>
-  </div>
-  <div class="field">
-    <%= f.label :fund_id %><br>
-    <%= f.text_field :fund_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  user_holdings_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
