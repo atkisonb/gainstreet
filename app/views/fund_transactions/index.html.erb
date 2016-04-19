@@ -1,0 +1,33 @@
+<h1>Listing fund_transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Market shares</th>
+      <th>Amount</th>
+      <th>Market action</th>
+      <th>Stock</th>
+      <th>Fund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fund_transactions.each do |fund_transaction| %>
+      <tr>
+        <td><%= fund_transaction.market_shares %></td>
+        <td><%= fund_transaction.amount %></td>
+        <td><%= fund_transaction.market_action %></td>
+        <td><%= fund_transaction.stock %></td>
+        <td><%= fund_transaction.fund %></td>
+        <td><%= link_to 'Show', fund_transaction %></td>
+        <td><%= link_to 'Edit', edit_fund_transaction_path(fund_transaction) %></td>
+        <td><%= link_to 'Destroy', fund_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fund transaction', new_fund_transaction_path %>

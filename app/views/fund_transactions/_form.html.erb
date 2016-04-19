@@ -1,0 +1,37 @@
+<%= form_for(@fund_transaction) do |f| %>
+  <% if @fund_transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fund_transaction.errors.count, "error") %> prohibited this fund_transaction from being saved:</h2>
+
+      <ul>
+      <% @fund_transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :market_shares %><br>
+    <%= f.text_field :market_shares %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :market_action %><br>
+    <%= f.text_field :market_action %>
+  </div>
+  <div class="field">
+    <%= f.label :stock_id %><br>
+    <%= f.text_field :stock_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fund_id %><br>
+    <%= f.text_field :fund_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

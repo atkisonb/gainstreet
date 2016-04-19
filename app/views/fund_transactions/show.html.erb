@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Market shares:</strong>
+  <%= @fund_transaction.market_shares %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @fund_transaction.amount %>
+</p>
+
+<p>
+  <strong>Market action:</strong>
+  <%= @fund_transaction.market_action %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @fund_transaction.stock %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @fund_transaction.fund %>
+</p>
+
+<%= link_to 'Edit', edit_fund_transaction_path(@fund_transaction) %> |
+<%= link_to 'Back', fund_transactions_path %>
