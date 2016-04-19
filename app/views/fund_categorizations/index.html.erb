@@ -1,27 +1,34 @@
-<h1>Listing fund_categorizations</h1>
-
-<table>
+<%- model_class = FundCategorization -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FundCategorization %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Fundstore category</th>
-      <th>Fund</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @fund_categorizations.each do |fund_categorization| %>
       <tr>
-        <td><%= fund_categorization.fundstore_category %></td>
-        <td><%= fund_categorization.fund %></td>
-        <td><%= link_to 'Show', fund_categorization %></td>
-        <td><%= link_to 'Edit', edit_fund_categorization_path(fund_categorization) %></td>
-        <td><%= link_to 'Destroy', fund_categorization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= fund_categorization.id %></td>
+        <td><%=l fund_categorization.created_at, format: :long %></td>
+        <td>
+          <%= link_to fund_categorization_path(fund_categorization), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to fund_categorization_path(fund_categorization), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Fund categorization', new_fund_categorization_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_fund_categorization_path,
+            :class => 'btn btn-primary' %>
