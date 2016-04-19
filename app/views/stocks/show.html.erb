@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Stock -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Stock %></h1>
+</div>
 
-<p>
-  <strong>Stock ticker:</strong>
-  <%= @stock.stock_ticker %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:stock_ticker) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.stock_ticker %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:stock_company) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.stock_company %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:stock_exchange) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.stock_exchange %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Stock company:</strong>
-  <%= @stock.stock_company %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              stocks_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_stock_path(@stock), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              stock_path(@stock),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Stock exchange:</strong>
-  <%= @stock.stock_exchange %>
-</p>
-
-<p>
-  <strong>Fund:</strong>
-  <%= @stock.fund %>
-</p>
-
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>
