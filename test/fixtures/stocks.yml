@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_ticker: MyString
+  stock_company: MyString
+  stock_exchange: MyString
+  fund_id: 
+
+two:
+  stock_ticker: MyString
+  stock_company: MyString
+  stock_exchange: MyString
+  fund_id: 
