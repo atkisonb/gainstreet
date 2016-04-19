@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fund name:</strong>
+  <%= @fund.fund_name %>
+</p>
+
+<p>
+  <strong>Fund description:</strong>
+  <%= @fund.fund_description %>
+</p>
+
+<p>
+  <strong>Fund strategy:</strong>
+  <%= @fund.fund_strategy %>
+</p>
+
+<p>
+  <strong>Strategy why i buy:</strong>
+  <%= @fund.strategy_why_i_buy %>
+</p>
+
+<p>
+  <strong>Strategy why i sell:</strong>
+  <%= @fund.strategy_why_i_sell %>
+</p>
+
+<p>
+  <strong>Strategy allocation discipline:</strong>
+  <%= @fund.strategy_allocation_discipline %>
+</p>
+
+<p>
+  <strong>Strategy other notes:</strong>
+  <%= @fund.strategy_other_notes %>
+</p>
+
+<p>
+  <strong>Nav shares:</strong>
+  <%= @fund.nav_shares %>
+</p>
+
+<p>
+  <strong>User account:</strong>
+  <%= @fund.user_account %>
+</p>
+
+<p>
+  <strong>Fund manager:</strong>
+  <%= @fund.fund_manager %>
+</p>
+
+<%= link_to 'Edit', edit_fund_path(@fund) %> |
+<%= link_to 'Back', funds_path %>

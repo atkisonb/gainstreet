@@ -1,0 +1,43 @@
+<h1>Listing funds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fund name</th>
+      <th>Fund description</th>
+      <th>Fund strategy</th>
+      <th>Strategy why i buy</th>
+      <th>Strategy why i sell</th>
+      <th>Strategy allocation discipline</th>
+      <th>Strategy other notes</th>
+      <th>Nav shares</th>
+      <th>User account</th>
+      <th>Fund manager</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @funds.each do |fund| %>
+      <tr>
+        <td><%= fund.fund_name %></td>
+        <td><%= fund.fund_description %></td>
+        <td><%= fund.fund_strategy %></td>
+        <td><%= fund.strategy_why_i_buy %></td>
+        <td><%= fund.strategy_why_i_sell %></td>
+        <td><%= fund.strategy_allocation_discipline %></td>
+        <td><%= fund.strategy_other_notes %></td>
+        <td><%= fund.nav_shares %></td>
+        <td><%= fund.user_account %></td>
+        <td><%= fund.fund_manager %></td>
+        <td><%= link_to 'Show', fund %></td>
+        <td><%= link_to 'Edit', edit_fund_path(fund) %></td>
+        <td><%= link_to 'Destroy', fund, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fund', new_fund_path %>
