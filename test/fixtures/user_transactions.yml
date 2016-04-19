@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_dollar_amount: 9.99
+  issued_nav_shares: 9.99
+  user_action: MyString
+  user_account_id: 
+  fund_id: 
+
+two:
+  transaction_dollar_amount: 9.99
+  issued_nav_shares: 9.99
+  user_action: MyString
+  user_account_id: 
+  fund_id: 
