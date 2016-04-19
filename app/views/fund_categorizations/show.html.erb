@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fundstore category:</strong>
+  <%= @fund_categorization.fundstore_category %>
+</p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @fund_categorization.fund %>
+</p>
+
+<%= link_to 'Edit', edit_fund_categorization_path(@fund_categorization) %> |
+<%= link_to 'Back', fund_categorizations_path %>

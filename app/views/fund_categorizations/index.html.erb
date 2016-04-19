@@ -1,0 +1,27 @@
+<h1>Listing fund_categorizations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fundstore category</th>
+      <th>Fund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fund_categorizations.each do |fund_categorization| %>
+      <tr>
+        <td><%= fund_categorization.fundstore_category %></td>
+        <td><%= fund_categorization.fund %></td>
+        <td><%= link_to 'Show', fund_categorization %></td>
+        <td><%= link_to 'Edit', edit_fund_categorization_path(fund_categorization) %></td>
+        <td><%= link_to 'Destroy', fund_categorization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fund categorization', new_fund_categorization_path %>
