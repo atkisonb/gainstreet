@@ -1,0 +1,31 @@
+<h1>Listing user_accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account type</th>
+      <th>User account number</th>
+      <th>User</th>
+      <th>Fund</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_accounts.each do |user_account| %>
+      <tr>
+        <td><%= user_account.account_type_id %></td>
+        <td><%= user_account.user_account_number %></td>
+        <td><%= user_account.user %></td>
+        <td><%= user_account.fund %></td>
+        <td><%= link_to 'Show', user_account %></td>
+        <td><%= link_to 'Edit', edit_user_account_path(user_account) %></td>
+        <td><%= link_to 'Destroy', user_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User account', new_user_account_path %>
