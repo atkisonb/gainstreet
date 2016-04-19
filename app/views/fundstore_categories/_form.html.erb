@@ -1,33 +1,22 @@
-<%= form_for(@fundstore_category) do |f| %>
-  <% if @fundstore_category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@fundstore_category.errors.count, "error") %> prohibited this fundstore_category from being saved:</h2>
-
-      <ul>
-      <% @fundstore_category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @fundstore_category, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :category_heading, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :category_heading, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category_subheading, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :category_subheading, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :category_heading %><br>
-    <%= f.text_area :category_heading %>
-  </div>
-  <div class="field">
-    <%= f.label :category_subheading %><br>
-    <%= f.text_area :category_subheading %>
-  </div>
-  <div class="field">
-    <%= f.label :fund_store_id %><br>
-    <%= f.text_field :fund_store_id %>
-  </div>
-  <div class="field">
-    <%= f.label :fund_id %><br>
-    <%= f.text_field :fund_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  fundstore_categories_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

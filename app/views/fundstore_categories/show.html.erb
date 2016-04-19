@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = FundstoreCategory -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => FundstoreCategory %></h1>
+</div>
 
-<p>
-  <strong>Category heading:</strong>
-  <%= @fundstore_category.category_heading %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:category_heading) %></dt>
+      <dd><pre class="prettyprint"><%= @fundstore_category.category_heading %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:category_subheading) %></dt>
+      <dd><pre class="prettyprint"><%= @fundstore_category.category_subheading %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Category subheading:</strong>
-  <%= @fundstore_category.category_subheading %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              fundstore_categories_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_fundstore_category_path(@fundstore_category), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              fundstore_category_path(@fundstore_category),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Fund store:</strong>
-  <%= @fundstore_category.fund_store %>
-</p>
-
-<p>
-  <strong>Fund:</strong>
-  <%= @fundstore_category.fund %>
-</p>
-
-<%= link_to 'Edit', edit_fundstore_category_path(@fundstore_category) %> |
-<%= link_to 'Back', fundstore_categories_path %>
