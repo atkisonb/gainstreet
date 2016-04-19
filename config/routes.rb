@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :fund_stores
+
   resources :fund_transactions
 
   resources :fundstore_categories
