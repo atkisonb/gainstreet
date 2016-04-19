@@ -6,4 +6,5 @@ class Fund < ActiveRecord::Base
   has_many :fund_managers
   has_many :user_transactions
   has_many :user_accounts
+  has_many :fund_managements
 end
