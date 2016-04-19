@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bank_accounts
+
   resources :users
 
   resources :funds
