@@ -1,0 +1,43 @@
+<h1>Listing fund_managers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Manager email</th>
+      <th>About</th>
+      <th>Manager facebook</th>
+      <th>Manager instagram</th>
+      <th>Manager location</th>
+      <th>Manager school</th>
+      <th>Manager twitter</th>
+      <th>Manager years experience</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fund_managers.each do |fund_manager| %>
+      <tr>
+        <td><%= fund_manager.first_name %></td>
+        <td><%= fund_manager.last_name %></td>
+        <td><%= fund_manager.manager_email %></td>
+        <td><%= fund_manager.about %></td>
+        <td><%= fund_manager.manager_facebook %></td>
+        <td><%= fund_manager.manager_instagram %></td>
+        <td><%= fund_manager.manager_location %></td>
+        <td><%= fund_manager.manager_school %></td>
+        <td><%= fund_manager.manager_twitter %></td>
+        <td><%= fund_manager.manager_years_experience %></td>
+        <td><%= link_to 'Show', fund_manager %></td>
+        <td><%= link_to 'Edit', edit_fund_manager_path(fund_manager) %></td>
+        <td><%= link_to 'Destroy', fund_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fund manager', new_fund_manager_path %>

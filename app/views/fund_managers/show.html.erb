@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @fund_manager.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @fund_manager.last_name %>
+</p>
+
+<p>
+  <strong>Manager email:</strong>
+  <%= @fund_manager.manager_email %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @fund_manager.about %>
+</p>
+
+<p>
+  <strong>Manager facebook:</strong>
+  <%= @fund_manager.manager_facebook %>
+</p>
+
+<p>
+  <strong>Manager instagram:</strong>
+  <%= @fund_manager.manager_instagram %>
+</p>
+
+<p>
+  <strong>Manager location:</strong>
+  <%= @fund_manager.manager_location %>
+</p>
+
+<p>
+  <strong>Manager school:</strong>
+  <%= @fund_manager.manager_school %>
+</p>
+
+<p>
+  <strong>Manager twitter:</strong>
+  <%= @fund_manager.manager_twitter %>
+</p>
+
+<p>
+  <strong>Manager years experience:</strong>
+  <%= @fund_manager.manager_years_experience %>
+</p>
+
+<%= link_to 'Edit', edit_fund_manager_path(@fund_manager) %> |
+<%= link_to 'Back', fund_managers_path %>

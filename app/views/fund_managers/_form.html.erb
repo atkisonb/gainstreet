@@ -1,0 +1,57 @@
+<%= form_for(@fund_manager) do |f| %>
+  <% if @fund_manager.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fund_manager.errors.count, "error") %> prohibited this fund_manager from being saved:</h2>
+
+      <ul>
+      <% @fund_manager.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_email %><br>
+    <%= f.text_field :manager_email %>
+  </div>
+  <div class="field">
+    <%= f.label :about %><br>
+    <%= f.text_area :about %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_facebook %><br>
+    <%= f.text_field :manager_facebook %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_instagram %><br>
+    <%= f.text_field :manager_instagram %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_location %><br>
+    <%= f.text_field :manager_location %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_school %><br>
+    <%= f.text_field :manager_school %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_twitter %><br>
+    <%= f.text_field :manager_twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_years_experience %><br>
+    <%= f.text_field :manager_years_experience %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
