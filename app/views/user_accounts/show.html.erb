@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = UserAccount -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => UserAccount %></h1>
+</div>
 
-<p>
-  <strong>Account type:</strong>
-  <%= @user_account.account_type_id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:account_type_id) %></dt>
+      <dd><pre class="prettyprint"><%= @user_account.account_type_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:user_account_number) %></dt>
+      <dd><pre class="prettyprint"><%= @user_account.user_account_number %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>User account number:</strong>
-  <%= @user_account.user_account_number %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              user_accounts_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_user_account_path(@user_account), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              user_account_path(@user_account),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @user_account.user %>
-</p>
-
-<p>
-  <strong>Fund:</strong>
-  <%= @user_account.fund %>
-</p>
-
-<%= link_to 'Edit', edit_user_account_path(@user_account) %> |
-<%= link_to 'Back', user_accounts_path %>

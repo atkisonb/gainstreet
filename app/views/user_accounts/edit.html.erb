@@ -1,6 +1,5 @@
-<h1>Editing user_account</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user_account %> |
-<%= link_to 'Back', user_accounts_path %>
+<%- model_class = UserAccount -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => UserAccount %></h1>
+</div>
+<%= render :partial => 'form' %>
