@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  market_shares: 9.99
+  amount: 9.99
+  market_action: MyString
+  stock_id: 
+  fund_id: 
+
+two:
+  market_shares: 9.99
+  amount: 9.99
+  market_action: MyString
+  stock_id: 
+  fund_id: 
